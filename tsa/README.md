@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Trend Sentiment Analysis
+While it is easy to send out surveys and expect the audience to give reviews of products/services or any trending topic, the chances of getting sufficient responses can be difficult. On the other hand, it is easy and convenient to post views on social media platforms i.e., Twitter, Reddit, etc. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Trend Sentiment Analysis is a powerful analytics tool with the potential to delivery summary of the trending topic with in-depth sentiment analysis performed on latest data gathered from a social media platform such as Twitter. A business could easily get insights on how well a product/service is being received on the consumer end with a report that can be easily modified to tailor for relevant use.
 
-## Available Scripts
+## Features:
+- Intuitive user interface with minimalistic design, easy to understand and use.
+- “Trend Analyst” is a dynamic web app, optimised for desktop browsers with support
+for mobile devices as well.
+- Ability to quickly search for trend of choice and provide results instantly.
+- Search filters to be able to fine-tune tweets gathered i.e based on location, etc.
+- Summary of what the searched trend is all about.
+- Sentiment Analysis of Tweets (i.e: latest 100 tweets)
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- - how the audience feel about the topic i.e. what emotions are invoked 
+- - how well the topic is doing i.e.,is it evoking positive/neutral/negative responses
+- Customisable graphs display valuable information
+- - Categories of mood
+- - Percentageofemotionsbeingdisplayed
+- - How well the trend is doing over time
+- - Summary of most common criticising words
+- Ability to tell apart sarcasm from a serious tone
+- Exploring potential sub-categories of mood or overlapping moods i.e., anger &
+sadness
+- Potential to grow in the future: accessing other data sources over time, i.e., data
+from Reddit, Google Reviews, TrustPilot, etc.
