@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    background-color: black;
+    color: rgb(226, 226, 226);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 0.3rem;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0.25rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+}
+
+.nav li:hover {
+    color: white;
+}
+
+.logo {
+    font-size: 2rem;
+    text-decoration: none;
+}
