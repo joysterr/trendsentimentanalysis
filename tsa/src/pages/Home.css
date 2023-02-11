@@ -1,0 +1,23 @@
+.intro-subhead {
+    color: gray;
+    font-size: 0.95rem;
+}
+
+.dot {
+    color: whitesmoke;
+}
+
+.divider-black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7vw;
+    padding: 0;
+    background-color: black;
+    width: 100%;
+    height: 5rem;
+}
+
+.divider-black h3 {
+    color: whitesmoke;
+}
