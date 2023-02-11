@@ -1,24 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Navbar.css'
 
 export default function Navbar() {
   return (
     <nav className='nav'>
-    <a href='/' className='logo'>tsa.</a>
+    <Link to='/' className='logo'>tsa.</Link>
     <ul>
-            <li>
-                <a href='/tsa'>Tsa</a>
-            </li>
-            <li>
-                <a href='/help'>Help</a>
-            </li>
-            <li>
-                <a href='/contact'>Contact</a>
-            </li>
-            <li>
-                <a href='/login'>Login</a>
-            </li>
+        <CreateLink to='/tsa'>Tsa</CreateLink>
+        <CreateLink to='/help'>Help</CreateLink>
+        <CreateLink to='/contact'>Contact</CreateLink>
+        <CreateLink to='/login'>Login</CreateLink>
     </ul>
 </nav>
   )
+}
+
+function CreateLink({ to, children, ...props}) {
+    const path = window.location.pathname
+
+    return (
+        <li className={path}>
+            <Link to={to} {...props}>
+                {children}
+            </Link>
+        </li>
+    )
 }
