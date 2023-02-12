@@ -19,7 +19,7 @@ export default function Home() {
       <div className='dot'>.</div>
 
       <div className='intro-subhead'>
-        Hola! I am tsa. <br/>
+        हेलो! I am tsa. <br/>
         I was created to understand 'natural language'. <br/>
         I understand emotions from an array of strings, or "sentences".<br/>
         Thank you to my creator, joy, who trained me to understand sentiments.<br/>
