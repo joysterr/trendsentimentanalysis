@@ -1,6 +1,7 @@
 .intro-subhead {
     color: gray;
     font-size: 0.95rem;
+    margin: 3vw;
 }
 
 .dot {
@@ -11,7 +12,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 7vw;
+    /* margin-top: 1vw;
+    margin-bottom: 1vw; */
     padding: 0;
     background-color: black;
     width: 100%;
@@ -20,4 +22,9 @@
 
 .divider-black h3 {
     color: whitesmoke;
+}
+
+.home-container img {
+    max-width: 100%;
+    height: auto;
 }
