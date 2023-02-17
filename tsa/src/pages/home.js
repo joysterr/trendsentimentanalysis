@@ -32,7 +32,7 @@ export default function Home() {
       <img src="https://via.placeholder.com/1873x500/?text=Sentiment Analysis" alt='placeholder'></img> 
       <img src="https://via.placeholder.com/1873x500/?text=Sarcasm Detection" alt='placeholder'></img> 
       <div className='divider-black'>
-        <h3>Features coming soon (<i>experimental</i>) :</h3>
+        <h3>Experimental Features (<i>coming soon</i>) :</h3>
       </div>
       <img src="https://via.placeholder.com/935x500/?text=Poem Generator" alt='placeholder'></img> 
       <img src="https://via.placeholder.com/935x500/?text=Chatbot Services" alt='placeholder'></img>

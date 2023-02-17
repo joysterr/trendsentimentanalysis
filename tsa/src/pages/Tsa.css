@@ -1,5 +1,6 @@
 .container-tsa {
-    margin: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,7 +48,7 @@
 }
 
 .results-region {
-    margin: 5rem;
+    /* margin: 5rem; */
     padding: 1.5rem;
     color: gray;
 }
@@ -57,4 +58,49 @@
     background: no-repeat;
     background-size: contain;
     height: 100%;
+}
+
+/* customise report menu */
+.customise-menu p {
+    margin-top: 2rem;
+    color: gray;
+}
+
+
+
+.customise-menu label {
+    margin: 0.5rem;
+    font-size: 13px;
+}
+
+.custom-check {
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: #eee;
+}
+
+.custom-check:after {
+    background-color: gray;
+}
+
+
+.menu-btns {
+    margin: 1rem
+}
+
+.menu-btns button {
+    margin: 1rem;
+    background: #f2f2f2;
+    border: none;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.customise-menu button:hover {
+    background: #e9e9e9;
 }
