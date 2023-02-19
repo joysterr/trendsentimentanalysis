@@ -5,14 +5,14 @@ import './Navbar.css'
 export default function Navbar() {
   return (
     <nav className='nav'>
-    <Link to='/' className='logo'>tsa.</Link>
-    <ul>
-        <CreateLink to='/tsa'>Tsa</CreateLink>
-        <CreateLink to='/help'>Help</CreateLink>
-        <CreateLink to='/contact'>Contact</CreateLink>
-        <CreateLink to='/login'>Login</CreateLink>
-    </ul>
-</nav>
+        <Link to='/' className='logo'>tsa.</Link>
+        <ul>
+            <CreateLink to='/tsa'>Tsa</CreateLink>
+            <CreateLink to='/help'>Help</CreateLink>
+            <CreateLink to='/contact'>Contact</CreateLink>
+            <CreateLink to='/login'>Login</CreateLink>
+        </ul>
+    </nav>
   )
 }
 
