@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './Tsa.css'
 
 export default function Tsa() {
@@ -51,7 +52,6 @@ export default function Tsa() {
 }
 
 
-
 function customiseReport() {
   console.log('customise button clicked!')
   var selection = [document.getElementById('bar').checked, 
@@ -65,4 +65,26 @@ function customiseReport() {
   document.querySelectorAll('.custom-check').forEach(_checkbox=>{
     (_checkbox).checked = false
   })
+}  
+  
+
+const handleSubmit = (e) => {
+  e.preventDefault()
+  console.log('button was clicked :)')
+  var input = document.getElementById('inputSearch').value
+  console.log('user said: ', input)
+
+  axios.post('/search', input.toString())
+    .then(function (response) {
+      console.log(response)
+    }) 
+    .then(function (error) {
+      console.log(error)
+    })
+    .then(function () {
+      document.getElementById('searchForm').reset();
+    })
+
+  // maybe trigger animation?
+  // create result as a component so i can load it after search
 }
