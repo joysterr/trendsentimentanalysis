@@ -11,7 +11,8 @@ def test():
 @app.route('/search', methods = ['POST'])
 def search():
     if request.method == 'POST':
-        data = request.form
+        data = request.get_data(as_text=True)
+        print(data, type(data))
     return('200: OK')
 
 if (__name__) ==  '__main__':

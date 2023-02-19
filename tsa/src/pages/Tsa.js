@@ -50,9 +50,8 @@ const handleSubmit = (e) => {
   console.log('button was clicked :)')
   var input = document.getElementById('inputSearch').value
   console.log('user said: ', input)
-  
 
-  axios.post('/search', input)
+  axios.post('/search', input.toString())
     .then(function (response) {
       console.log(response)
     }) 
