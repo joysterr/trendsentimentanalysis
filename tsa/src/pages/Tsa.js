@@ -50,16 +50,7 @@ export default function Tsa() {
   )
 }
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-  console.log('button was clicked :)')
-  var input = document.getElementById('inputSearch').value
-  console.log('user said: ', input)
-  document.getElementById('searchForm').reset()
-  // axios call 
-  // maybe trigger animation?
-  // create result as a component so i can load it after search
-}
+
 
 function customiseReport() {
   console.log('customise button clicked!')
