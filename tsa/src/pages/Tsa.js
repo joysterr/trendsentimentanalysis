@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 import './Tsa.css'
 
 export default function Tsa() {
@@ -49,8 +50,18 @@ const handleSubmit = (e) => {
   console.log('button was clicked :)')
   var input = document.getElementById('inputSearch').value
   console.log('user said: ', input)
-  document.getElementById('searchForm').reset();
-  // axios call 
+
+  axios.post('/search', input.toString())
+    .then(function (response) {
+      console.log(response)
+    }) 
+    .then(function (error) {
+      console.log(error)
+    })
+    .then(function () {
+      document.getElementById('searchForm').reset();
+    })
+
   // maybe trigger animation?
   // create result as a component so i can load it after search
 }
