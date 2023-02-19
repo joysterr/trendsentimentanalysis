@@ -38,7 +38,7 @@ export default function Tsa() {
       </div>
 
       <div className='results-region'>
-        <p>Results are dispalyed below:</p>
+        <p>Results are displayed below:</p>
         <br/>
         <div className='graphs'>
           <img src="https://via.placeholder.com/500x500/?text=barchart" alt='placeholder'></img>
