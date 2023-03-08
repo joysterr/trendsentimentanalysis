@@ -17,11 +17,6 @@ export default function Home() {
       <br/>
       <h2>Analysis beyond numbers.</h2>
 
-      {/* <div className='dot'>.</div>
-      <div className='dot'>.</div>
-      <div className='dot'>.</div>
-      <div className='dot'>.</div> */}
-
       <div className='intro-subhead'>
         हेलो! I am tsa. <br/>
         I was created to understand 'natural language'. <br/>
