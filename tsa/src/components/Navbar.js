@@ -8,7 +8,6 @@ export default function Navbar() {
         <Link to='/' className='logo'>tsa.</Link>
         <ul>
             <CreateLink to='/tsa'>Tsa</CreateLink>
-
             <CreateLink to='/login'>Login</CreateLink>
         </ul>
     </nav>
