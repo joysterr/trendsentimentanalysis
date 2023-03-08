@@ -8,6 +8,8 @@ import Help from './pages/Help'
 import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import Xperiments from './pages/Xperiments';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -17,12 +19,14 @@ function App() {
         <Routes>
           <Route path='/' element={ <Home /> } />
           <Route path='/tsa' element={ <Tsa /> } />
+          <Route path='/xperiments' element={ <Xperiments /> } />
           <Route path='/help' element={ <Help /> } />
           <Route path='/contact' element={ <Contact /> } />
           <Route path='/login' element={ <Login /> } />
           <Route path='/signup' element={ <Signup /> } />
         </Routes>
       </div>
+        <Footer />
     </>
   )
 }

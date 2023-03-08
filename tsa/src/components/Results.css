@@ -1,0 +1,11 @@
+.results-region {
+    padding: 1.5rem;
+    color: gray;
+}
+
+.graphs img {
+    margin: 1rem;
+    background: no-repeat;
+    background-size: contain;
+    height: 100%;
+}

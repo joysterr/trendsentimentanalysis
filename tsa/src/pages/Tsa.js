@@ -1,8 +1,29 @@
 import React from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import './Tsa.css'
+import Results from '../components/Results'
 
 export default function Tsa() {
+  const [showReport, setShowReport] = useState(false)
+
+  function customiseReport() {
+    console.log('customise button clicked!')
+    var selection = [
+      document.getElementById('bar').checked, 
+      document.getElementById('pie').checked,
+      document.getElementById('sarc').checked,
+      document.getElementById('wordm').checked
+    ]
+    console.log('user selected: ', selection)
+    setShowReport(true)
+  
+    // to reset the checkboxes
+    document.querySelectorAll('.custom-check').forEach(_checkbox=>{
+      (_checkbox).checked = false
+    })
+  }  
+
   return (
     <>
       <div className='container-tsa'>
@@ -36,17 +57,9 @@ export default function Tsa() {
           <button id='btn-save' onClick={customiseReport}>Save</button>
         </div>
       </div>
+    
+      {showReport ? <Results /> : null}
 
-      <div className='results-region'>
-        <p>Results are displayed below:</p>
-        <br/>
-        <div className='graphs'>
-          <img src="https://via.placeholder.com/500x500/?text=barchart" alt='placeholder'></img>
-          <img src="https://via.placeholder.com/500x500/?text=piechart" alt='placeholder'></img>
-          <img src="https://via.placeholder.com/500x500/?text=sarcasm%" alt='placeholder'></img>
-          <img src="https://via.placeholder.com/500x500/?text=wordmap" alt='placeholder'></img>
-        </div>
-      </div>
     </>
   )
 }

@@ -1,5 +1,9 @@
 import React from 'react'
 import './Home.css'
+import senti from '../media/images/senti.jpg'
+import sarc from '../media/images/sarc.jpg'
+import poem from '../media/images/poem.jpg'
+import bot from '../media/images/bot.jpg'
 
 export default function Home() {
   return (
@@ -24,11 +28,13 @@ export default function Home() {
       <div className='divider-black'>
         <h3>What can I do for you?</h3>
       </div>
-
+      <img src={senti} alt='sentiment analysis' /> 
+      <img src={sarc} alt='sarcasm detection' /> 
       <div className='divider-black'>
         <h3>Experimental Features (<i>coming soon</i>) :</h3>
       </div>
-
+      <img src={poem} alt='poetry' /> 
+      <img src={bot} alt='chatbot' /> 
     </div>
   )
 }

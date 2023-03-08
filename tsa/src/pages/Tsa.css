@@ -11,6 +11,7 @@
     color: gray;
 }
 
+/* search bar container */
 .search-bar input {
     box-sizing: border-box;
     border: none;
@@ -43,26 +44,12 @@
     background: #e9e9e9;
 }
 
-.results-region {
-    /* margin: 5rem; */
-    padding: 1.5rem;
-    color: gray;
-}
-
-.graphs img {
-    margin: 1rem;
-    background: no-repeat;
-    background-size: contain;
-    height: 100%;
-}
 
 /* customise report menu */
 .customise-menu p {
     margin-top: 2rem;
     color: gray;
 }
-
-
 
 .customise-menu label {
     margin: 0.5rem;
