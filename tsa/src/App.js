@@ -9,6 +9,7 @@ import Contact from './pages/Contact'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Xperiments from './pages/Xperiments';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='/signup' element={ <Signup /> } />
         </Routes>
       </div>
+        <Footer />
     </>
   )
 }

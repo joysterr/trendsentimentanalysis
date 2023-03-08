@@ -12,7 +12,7 @@ export default function Login() {
         </div>
         <div className='login-box-right'>
           <div className='login-form'>
-            <from className='loginForm' id='loginForm'>
+            <form className='loginForm' id='loginForm'>
               <input
                 type='text'
                 id='inputEmail'
@@ -31,7 +31,7 @@ export default function Login() {
               <button id='btn-signup'>
                 Signup
               </button>
-            </from>
+            </form>
           </div>
           <Link to='/signup' className='untitled'>
             click here to sign up
