@@ -64,25 +64,6 @@ export default function Tsa() {
   )
 }
 
-
-// function customiseReport() {
-//   console.log('customise button clicked!')
-//   var selection = [
-//     document.getElementById('bar').checked, 
-//     document.getElementById('pie').checked,
-//     document.getElementById('sarc').checked,
-//     document.getElementById('wordm').checked
-//   ]
-//   console.log('user selected: ', selection)
-//   setShowReport(true)
-
-//   // to reset the checkboxes
-//   document.querySelectorAll('.custom-check').forEach(_checkbox=>{
-//     (_checkbox).checked = false
-//   })
-// }  
-  
-
 const handleSubmit = (e) => {
   e.preventDefault()
   console.log('button was clicked :)')
