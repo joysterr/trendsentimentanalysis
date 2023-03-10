@@ -28,3 +28,16 @@
     max-width: 100%;
     height: auto;
 }
+
+.img-title {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    background-color: black;
+    font-size: 1rem;
+    border: 2px solid whitesmoke;
+    border-radius: 10px;
+}
+

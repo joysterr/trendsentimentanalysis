@@ -1,0 +1,24 @@
+.divider-black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 1vw;
+    margin-bottom: 1vw; */
+    padding: 0;
+    background-color: black;
+    width: 100%;
+    height: 5rem;
+}
+
+.divider-black h3 {
+    color: whitesmoke;
+}
+
+.contact-container {
+    margin: 5rem;
+}
+
+.message-end {
+    color: gray;
+    font-size: 0.8rem;
+}
