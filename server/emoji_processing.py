@@ -18,7 +18,7 @@ def delete_emoji(sentence):
 
 # replace emoji with relevant word
 def emoji_to_word(sentence):
-    with open('/util', 'rb') as f:
+    with open('/util/Emoji_Dict.p', 'rb') as f:
         emoji_bank = pickle.load(f)
     emoji_bank = {v: k for k, v in emoji_bank.items()}
 
@@ -29,7 +29,7 @@ def emoji_to_word(sentence):
 
 # delete emoticons :)
 def delete_emoticons(sentence):
-    with open('/util', 'rb') as f:
+    with open('/util/Emoticon_Dict.p', 'rb') as f:
         emoticon_bank = pickle.load(f)
 
     emoticon_pattern = re.compile(u'(' + u'|'.join(k for k in emoticon_bank) + u')')

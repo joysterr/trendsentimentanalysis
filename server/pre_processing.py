@@ -4,6 +4,7 @@ import numpy as np
 import re
 import html
 import string
+import emoji_processing as emo
 
 # import output file
 df_tweets = pd.read_csv('./exports/tweepy_output/results.csv')
@@ -24,5 +25,10 @@ def preprocess(arr):
         
 preprocess(tweets_arr)
 
+tweets_noemo = []
 for item in tweets_clean:
+    x = emo.delete_emoji(item)
+    tweets_noemo.append(x)
+
+for item in tweets_noemo:
     print(f'{item}\n')
