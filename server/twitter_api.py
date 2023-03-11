@@ -7,11 +7,6 @@ def exe_tapi(input_search):
     #import from server
     user_search = input_search #user query goes here
 
-    # if user_search == '':
-    #     quit()
-    # else:
-    #     print('success')
-
     #auth twitter api v1/1.1
     cfg = configparser.ConfigParser()
     cfg.read('config.ini')
