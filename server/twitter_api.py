@@ -35,5 +35,5 @@ def exec_tapi(input_search):
     print(df_tweet_data)
 
     # export data/results
-    df_tweet_data.to_csv('exports/model_output/results.csv')
-    df_tweet_data.to_json('exports/model_output/results.json')
+    df_tweet_data.to_csv('exports/tweepy_output/results.csv')
+    df_tweet_data.to_json('exports/tweepy_output/results.json')

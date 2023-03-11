@@ -12,6 +12,8 @@ tweets_arr = []
 for item in df_tweets['Tweet']:
     tweets_arr.append(item)
 
+
+# pre-process
 tweets_clean = []
 def preprocess(arr):
     for item in arr:
