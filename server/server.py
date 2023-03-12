@@ -37,8 +37,8 @@ def search():
         senti_export = brain.convert_setiments(senti_results)
         sarc_export = brain.convert_sarc(sarc_results)
         
-        # graphs
-        ggen.generate_graphs(senti_export, sarc_export, tweets_processed, user_input)
+        # graphs (backed use only)
+        # ggen.generate_graphs(senti_export, sarc_export, tweets_processed, user_input)
     return('200: OK')
 
 @app.route('/searchresults', methods = ['GET'])
