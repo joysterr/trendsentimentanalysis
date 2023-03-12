@@ -22,7 +22,7 @@ def create_bar(data, user_search):
     plt.xlabel('sentiments')
     plt.ylabel('score')
     #plt.show()
-    plt.savefig('senti_bar.png')
+    plt.savefig('./exports/plots/senti_bar.png')
   
 # generate a pie chart
 def create_pie(data, user_search):
@@ -33,7 +33,7 @@ def create_pie(data, user_search):
     pie = plt.pie(scores, labels=pie_labels)
     plt.title(f'{user_search} results')
     #plt.show()
-    plt.savefig('senti_pie.png')
+    plt.savefig('./exports/plots/senti_pie.png')
     
 
 # generate a wordcloud
@@ -68,7 +68,7 @@ def create_wordcloud(tweets_raw):
     plt.tight_layout(pad = 0)
 
     #plt.show()
-    plt.savefig('wordcloud.png')
+    plt.savefig('./exports/plots/wordcloud.png')
 
 
 # generate sarc pie plot
@@ -80,4 +80,4 @@ def create_sarc_pie(data, user_search):
     pie = plt.pie(scores, labels=pie_labels)
     plt.title(f'{user_search} sarcasm results')
     #plt.show()
-    plt.savefig('sarc_pie.png')
+    plt.savefig('./exports/plots/sarc_pie.png')
