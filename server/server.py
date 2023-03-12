@@ -20,7 +20,7 @@ def search():
     if request.method == 'POST':
         data = request.get_data(as_text=True)
         print(data, type(data))
-        tapi.exec_tapi(data) # send search parameter to twutter api 
+        #tapi.exec_tapi(data) # send search parameter to twitter api  (TURNED OFF FOR TESTING)
         tweets_processed = pre.preprocess('./exports/tweepy_output/results.csv')
         tweet_vect = tknz.senti_tokenizer(tweets_processed)
         tweet_vect2 = tknz.sarc_tokenizer(tweets_processed)
