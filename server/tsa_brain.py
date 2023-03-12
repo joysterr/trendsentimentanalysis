@@ -1,8 +1,8 @@
 import tensorflow as tf
 
 #load model
-senti_model = tf.keras.models.load_model('./models/')
-sarc_model = tf.keras.models.load_model('./models/')
+#senti_model = tf.keras.models.load_model('./models/')
+#sarc_model = tf.keras.models.load_model('./models/')
 
 #sentiment analysis 
 def predict_senti(input):
