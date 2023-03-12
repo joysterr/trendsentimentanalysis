@@ -12,6 +12,7 @@ export default function About() {
             Thank you to my creator, joy, who trained me to understand sentiments<br/>
             behind these oridinary sequences of 1s & 0s. <br/>
             Bye ^_^
+            
         </div>
     </>
   )
