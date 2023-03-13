@@ -93,3 +93,7 @@
 .feedbackForm button:hover {
     background: gray;
 }
+
+.tsa-perf {
+    margin: 1rem;
+}

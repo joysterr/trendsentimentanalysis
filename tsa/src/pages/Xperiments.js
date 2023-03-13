@@ -13,7 +13,7 @@ export default function Xperiments() {
     <>
       <div className='container-xp'>
         <h1>Welcome to Xperiments</h1>
-        <div>(please have your safety goggles ready)</div>
+        <div>(please have your safety goggles ready 😎)</div>
       </div>
       <div className='search-bar'>
         <p>Start typing first line of your poetry</p>

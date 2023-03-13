@@ -25,6 +25,10 @@ export default function About() {
         <h3>I &lt;3 Feedback</h3>
       </div>
 
+      <div className='feedback-subtitle'>
+        <p>(feedback helps me improve!)</p> <br/>
+      </div>
+
       <div className='feedback-form'>
         <form className='feedbackForm' id='feedbackForm'>
           <input
@@ -56,7 +60,15 @@ export default function About() {
       </div>
 
       <div className='feedback-subtitle'>
-        <p>((anonymised)feedback you provide can be used to train the sentiment analysis/sarcasm model)</p>
+        <p>(feedback you provide (anonymised) can be used to train the sentiment analysis/sarcasm models)</p> <br/> {/*if automated can cause corpus poisoning*/}
+      </div>
+
+      <div className='divider-black'>
+        <h3>tsa. performance (based on feedback):</h3>
+      </div>
+      <div className='tsa-perf'>
+        <img src="https://via.placeholder.com/500x500/?text=tsa. performance" alt='placeholder'></img>
+
       </div>
     </>
   )
