@@ -11,6 +11,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import Xperiments from './pages/Xperiments';
 import Footer from './components/Footer';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' element={ <Login /> } />
           <Route path='/signup' element={ <Signup /> } />
         </Routes>
+        <Chatbot />
       </div>
         <Footer />
     </>
