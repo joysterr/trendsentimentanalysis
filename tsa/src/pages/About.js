@@ -40,16 +40,23 @@ export default function About() {
             placeholder='Enter feedback here'
             name='inputfeedback'
             className='feedback-input'
+            required
           />
+          <br/>
+          <label>Rate your experience: </label>
+          <select name='rate' id='rate' required>
+            <option value={1}>Good👍</option>
+            <option value={0}>Bad👎</option>
+          </select>
           <br/>
           <button id='btn-feedback' type='submit' onClick={handleSubmit}>
             Submit
           </button>
-          </form>
+        </form>
       </div>
 
       <div className='feedback-subtitle'>
-        <p>(feedback you provide can be used to train the sentiment analysis/sarcasm model)</p>
+        <p>((anonymised)feedback you provide can be used to train the sentiment analysis/sarcasm model)</p>
       </div>
     </>
   )
