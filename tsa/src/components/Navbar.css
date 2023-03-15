@@ -17,6 +17,7 @@ body {
     padding: 0 0.3rem;
     position: sticky; /* #sticky */
     top: 0;
+    z-index: 1;
 }
 
 .nav a {

@@ -6,6 +6,7 @@ import Results from '../components/Results'
 
 export default function Tsa() {
   const [showReport, setShowReport] = useState(false)
+  const [selection, setSelection] = useState()
 
   function customiseReport() {
     console.log('customise button clicked!')
@@ -17,6 +18,7 @@ export default function Tsa() {
     ]
     console.log('user selected: ', selection)
     setShowReport(true)
+    setSelection(selection)
   
     // to reset the checkboxes
     document.querySelectorAll('.custom-check').forEach(_checkbox=>{
@@ -58,7 +60,7 @@ export default function Tsa() {
         </div>
       </div>
     
-      {showReport ? <Results /> : null}
+      {showReport ? <Results selection={selection}/> : null}
 
     </>
   )
@@ -80,7 +82,4 @@ const handleSubmit = (e) => {
     .then(function () {
       document.getElementById('searchForm').reset();
     })
-
-  // maybe trigger animation?
-  // create result as a component so i can load it after search
 }
