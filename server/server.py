@@ -2,6 +2,7 @@
 from flask import Flask
 from flask import request
 import pandas as pd
+import json
 # tsa imports 
 import twitter_api as tapi
 import pre_processing as pre
@@ -11,17 +12,14 @@ import graph_gen as ggen
 
 app = Flask(__name__)
 
-# local store (temp)
-senti_export, sarc_export = {}
-input_query = ''
-
 # http requests handling
 @app.route('/')
 def test():
     return('welcome to tsa!')
 
-@app.route('/search', methods = ['POST'])
+@app.route('/search', methods = ['POST', 'GET'])
 def search():
+    output = {}
     if request.method == 'POST':
         user_input = request.get_data(as_text=True)
         input_query = user_input
@@ -37,19 +35,25 @@ def search():
         senti_export = brain.convert_setiments(senti_results)
         sarc_export = brain.convert_sarc(sarc_results)
         
+        output = {
+            'input': input_query, 
+            'senti': senti_export,
+            'sarc': sarc_export,
+            'tweets': tweets_processed
+        }
+        
+        with open('./temp/output.json', 'w') as export_file:
+            json.dump(output, export_file)
+       
         # graphs (backed use only)
         # ggen.generate_graphs(senti_export, sarc_export, tweets_processed, user_input)
-    return('200: OK')
-
-@app.route('/searchresults', methods = ['GET'])
-def search_results():
-    if request.method == 'GET':
-        df_tweets = pd.read_csv('./exports/tweepy_output/results.csv')
-        tweets_arr = []
-        for item in df_tweets['Tweet']:
-            tweets_arr.append(item)
-        # export_data = [senti_export, sarc_export, input_query]
-    return senti_export, sarc_export, tweets_arr, input_query
+        return output
+    elif request.method == 'GET':
+        with open('./temp/output.json', 'r') as handle:
+            dictdump = json.loads(handle.read())
+        return dictdump
+        
+    
 
 # exec server
 if (__name__) ==  '__main__':

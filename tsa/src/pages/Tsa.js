@@ -7,6 +7,34 @@ import Results from '../components/Results'
 export default function Tsa() {
   const [showReport, setShowReport] = useState(false)
   const [selection, setSelection] = useState()
+  const [responseData, setResponse] = useState({})
+
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('button was clicked :)')
+    var input = document.getElementById('inputSearch').value
+    console.log('user said: ', input)
+  
+    axios.post('/search', input.toString())
+      .then(function (response) {
+        console.log(response)
+        setResponse(response)
+      }) 
+      .then(function (error) {
+        console.log(error)
+      })
+      .then(function () {
+        document.getElementById('searchForm').reset();
+      })
+  }
+
+
+
+
+
 
   function customiseReport() {
     console.log('customise button clicked!')
@@ -60,26 +88,8 @@ export default function Tsa() {
         </div>
       </div>
     
-      {showReport ? <Results selection={selection}/> : null}
+      {showReport ? <Results selection={selection} /> : null}
 
     </>
   )
-}
-
-const handleSubmit = (e) => {
-  e.preventDefault()
-  console.log('button was clicked :)')
-  var input = document.getElementById('inputSearch').value
-  console.log('user said: ', input)
-
-  axios.post('/search', input.toString())
-    .then(function (response) {
-      console.log(response)
-    }) 
-    .then(function (error) {
-      console.log(error)
-    })
-    .then(function () {
-      document.getElementById('searchForm').reset();
-    })
 }
