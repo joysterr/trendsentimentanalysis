@@ -28,14 +28,14 @@ export default function Login() {
               <button id='btn-login' type='submit'>
                 Login
               </button>
-              <button id='btn-signup'>
-                Signup
-              </button>
             </form>
+            <button id='btn-signup' className='sign-button'>
+            <Link to='/signup' className='signup-link'>
+              Signup
+            </Link>
+            </button>
           </div>
-          <Link to='/signup' className='untitled'>
-            click here to sign up
-          </Link>
+
         </div>  
       </div>
     </>

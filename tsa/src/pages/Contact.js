@@ -13,7 +13,7 @@ export default function Contact() {
       <div className='contact-container'>
         <div className='contact-box'>
           <div className='login-form'>
-            <form className='loginForm' id='loginForm'>
+            <form className='contactForm' id='contactForm'>
               <input
                 type='email'
                 id='inputEmail'

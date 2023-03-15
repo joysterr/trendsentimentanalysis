@@ -1,7 +1,60 @@
+.contactForm input {
+    margin: 0.5rem;
+    box-sizing: border-box;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 15px;
+    width: 350px;
+}
+
+/* textarea input field */
 .query-input {
+    margin-top: 0.5rem;
     padding: 12px;
-    width: 330px;
+    width: 350px;
     border: none;
     border-radius: 15px;
     background-color:#f2f2f2;
+}
+
+.contactForm label {
+    color: gray;
+    font-size: 14px;
+}
+
+.contactForm select {
+    margin-top: 1rem;
+    background-color: #f2f2f2;
+    border-style: solid;
+    border-color: #f2f2f2;
+    border-radius: 15px;
+    font-size: 13px;
+}
+
+.contactForm select:hover {
+    border-style: solid;
+    border-color: gray;
+}
+
+.contactForm button {
+    margin: 1rem;
+    width: 6rem;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.contactForm button:hover {
+    background: gray;
 }

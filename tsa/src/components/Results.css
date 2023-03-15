@@ -3,9 +3,22 @@
     color: gray;
 }
 
-.graphs img {
+/* .graphs-container img {
     margin: 1rem;
     background: no-repeat;
     background-size: contain;
     height: 100%;
+} */
+
+
+.graphs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.graphs p{
+    color: black;
+    margin: 1rem;
+    font-style: oblique;
 }

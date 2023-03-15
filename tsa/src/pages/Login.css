@@ -66,3 +66,26 @@
 .loginForm button:hover {
     background: gray;
 }
+
+.sign-button {
+    width: 6rem;
+    background: black;
+    color: white;
+    border: none;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sign-button:hover {
+    background: gray;
+}
+
+.signup-link {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
