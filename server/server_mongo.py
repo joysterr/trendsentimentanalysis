@@ -3,7 +3,10 @@ from flask import Flask
 from flask import request
 import pandas as pd
 import json
-
+import pymongo
+from pymongo.mongo_client import MongoClient
+from pymongo.server_api import ServerApi
+from bson import json_util
 # tsa imports 
 import twitter_api as tapi
 import pre_processing as pre
@@ -13,6 +16,9 @@ import graph_gen as ggen
 
 app = Flask(__name__)
 
+client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
+db = client.tsa_db
+clt = db.tsa_collection
 
 # http requests handling
 @app.route('/')
@@ -44,20 +50,20 @@ def search():
             'tweets': tweets_processed
         }
         
-        
-        with open('./temp/output.json', 'w') as export_file:
-            json.dump(output, export_file)
-       
-        # graphs (backed use only)
-        # ggen.generate_graphs(senti_export, sarc_export, tweets_processed, user_input)
-        
-        return output # returns all data back to client
-    elif request.method == 'GET':
-        with open('./temp/output.json', 'r') as handle:
-            dictdump = json.loads(handle.read())
-        return dictdump
-        
+        # create in mongodb
+        clt.insert_one(output)
+
+        return ('200: OK')
     
+    elif request.method == 'GET':
+        data_export = dict(clt.find_one(
+            {},
+            sort=[('_id', pymongo.DESCENDING)]
+        ))
+        
+        return json.loads(json_util.dumps(data_export))
+         
+
 # exec server
 if (__name__) ==  '__main__':
     app.run(debug=True)
