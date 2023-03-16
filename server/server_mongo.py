@@ -99,6 +99,25 @@ def user_feedback():
         data_export = dict(clt_uf.find())
         return json.loads(json_util.dumps(data_export))
 
+@app.route('/tsa/userfeedback/', methods = ['GET'])
+def analyse_feedback():
+    data_import = clt_uf.find()
+    data_raw = json.loads(json_util.dumps(data_import))
+    print(data_raw)
+    key = 0
+    data_arr = []
+    for items in data_raw:
+        data_arr.append(data_raw[key]['feedback'])
+        key += 1
+    print(data_arr, type(data_arr))
+    # clean_data = pre.preprocess(data_arr)
+    data_tok = tknz.senti_tokenizer(data_arr)
+    senti_out = brain.predict_senti(data_tok)
+    senti_conv = brain.convert_setiments(senti_out)
+    print(senti_conv['pos'])
+    resp = [senti_conv['pos'], senti_conv['neg']]
+    return resp
+
 # exec server
 if (__name__) ==  '__main__':
     app.run(debug=True)
