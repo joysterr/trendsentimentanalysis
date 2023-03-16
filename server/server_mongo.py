@@ -78,6 +78,11 @@ def user_support():
         clt_us.insert_one(support_query)
         
         return ('feedback saved')
+    elif request.method == 'GET':
+        data_export = dict(clt.find())
+        return json.loads(json_util.dumps(data_export))
+
+
 
 # exec server
 if (__name__) ==  '__main__':
