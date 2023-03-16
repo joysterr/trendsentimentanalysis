@@ -32,15 +32,18 @@ def search():
         user_input = request.get_data(as_text=True)
         input_query = user_input
         print(user_input, type(user_input))
-        #tapi.exec_tapi(data) # send search parameter to twitter api  (TURNED OFF FOR TESTING)
+        tapi.exec_tapi(input_query) # send search parameter to twitter api  (TURN OFF FOR TESTING)
         tweets_processed = pre.preprocess('./exports/tweepy_output/results.csv')
         tweet_vect = tknz.senti_tokenizer(tweets_processed)
         tweet_vect2 = tknz.sarc_tokenizer(tweets_processed)
+        print(tweet_vect)
         senti_results = brain.predict_senti(tweet_vect)
+        print(senti_results)
         sarc_results = brain.predict_sarc(tweet_vect2)
         
         # exports
         senti_export = brain.convert_setiments(senti_results)
+        print(senti_export)
         sarc_export = brain.convert_sarc(sarc_results)
         
         output = {
@@ -63,6 +66,11 @@ def get_recent():
             sort=[('_id', pymongo.DESCENDING)]
         ))
         return json.loads(json_util.dumps(data_export))
+
+@app.route('/userfeedback', methods = ['GET', 'POST'])
+def userfeedback():
+    if request.method == 'GET':
+        return ('feedback saved')
 
 # exec server
 if (__name__) ==  '__main__':

@@ -22,7 +22,7 @@ def exec_tapi(input_search):
 
     api = tweepy.API(auth)
 
-    recent_tweets = api.search_tweets(q=f'"{user_search}" -filter:retweets -filter:media -filter:links', lang='en', result_type='mixed', count=5, include_entities=False)
+    recent_tweets = api.search_tweets(q=f'"{user_search}" -filter:retweets -filter:media -filter:links', lang='en', result_type='mixed', count=20, include_entities=False)
 
     col = ['Time', 'Tweet']
     tweet_data = []

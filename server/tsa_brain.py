@@ -13,7 +13,7 @@ def predict_senti(input):
 def convert_setiments(model_output):
     senti_dict = {'pos': 0, 'neg': 0}
     for val in model_output:
-        if val >= 0.5:
+        if val >= 0.6:
             senti_dict['pos'] += 1
         else:
             senti_dict['neg'] += 1
