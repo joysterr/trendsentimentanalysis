@@ -97,3 +97,8 @@
 .tsa-perf {
     margin: 1rem;
 }
+
+.user-msg {
+    color: gray;
+    font-size: 13px;
+}

@@ -18,8 +18,11 @@ app = Flask(__name__)
 
 client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = client.tsa_db
-clt = db.tsa_collection
-clt_us = db.tsa_user_support
+
+# collections
+clt = db.tsa_collection #tsa data store
+clt_us = db.tsa_user_support #user support store
+clt_uf = db.tsa_user_feedback #user feedback store
 
 # http requests handling
 @app.route('/')
@@ -79,10 +82,22 @@ def user_support():
         
         return ('feedback saved')
     elif request.method == 'GET':
-        data_export = dict(clt.find())
+        data_export = dict(clt_us.find())
         return json.loads(json_util.dumps(data_export))
 
+@app.route('/userfeedback', methods = ['GET', 'POST'])
+def user_feedback():
+    if request.method == 'POST':
 
+        feedback_query = request.get_json(force=True)
+        print(feedback_query, type(feedback_query))
+        
+        clt_uf.insert_one(feedback_query)
+        
+        return ('feedback saved')
+    elif request.method == 'GET':
+        data_export = dict(clt_uf.find())
+        return json.loads(json_util.dumps(data_export))
 
 # exec server
 if (__name__) ==  '__main__':

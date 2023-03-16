@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import './About.css'
 
 export default function About() {
+  const [userName, setUserName] = useState()
+  const [showMsg, setShowMsg] = useState(false)
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('okay, we got your cry for help')
+    console.log('thanks, we got your (feed)back')
+    setUserName(document.getElementById('inputName').value)
+    setShowMsg(true)
+    var feedbackIn = document.getElementById('inputFeedback').value
+    var ratingValIn = document.getElementById('rate').value
+
+    axios.post('/userfeedback',
+      {
+        feedback: feedbackIn,
+        ratingVal: ratingValIn,
+      }
+    )
+      .then(function (response){
+        console.log(response)
+      })
+      .then(function (){
+        document.getElementById('feedbackForm').reset()
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 
   return (
@@ -58,6 +82,8 @@ export default function About() {
           </button>
         </form>
       </div>
+
+      {showMsg ? <div className='user-msg'>Thank you {userName} for your feedback :)</div> : null}
 
       <div className='feedback-subtitle'>
         <p>(feedback you provide (anonymised) can be used to train the sentiment analysis/sarcasm models)</p> <br/> {/*if automated can cause corpus poisoning*/}
