@@ -13,7 +13,7 @@ export default function Tsa() {
 
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
     console.log('button was clicked :)')
     var input = document.getElementById('inputSearch').value
     console.log('user said: ', input)

@@ -45,24 +45,24 @@ def search():
         
         output = {
             'input': input_query, 
-            'senti': senti_export,
-            'sarc': sarc_export,
+            'senti': [int(senti_export['pos']), int(senti_export['neg'])],
+            'sarc': [sarc_export['sarc'], sarc_export['not_sarc']],
             'tweets': tweets_processed
         }
         
         # create in mongodb
         clt.insert_one(output)
 
-        return ('200: OK')
-    
-    elif request.method == 'GET':
+        return (f'200: OK | Request recieved: {user_input}')
+   
+@app.route('/search/recent', methods = ['GET'])  
+def get_recent():
+    if request.method == 'GET':
         data_export = dict(clt.find_one(
             {},
             sort=[('_id', pymongo.DESCENDING)]
         ))
-        
         return json.loads(json_util.dumps(data_export))
-         
 
 # exec server
 if (__name__) ==  '__main__':

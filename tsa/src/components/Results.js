@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Results.css'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie } from 'recharts';
@@ -6,33 +6,53 @@ import ReactWordcloud from 'react-wordcloud'
 
 export default function Results({selection}) {
   const sel = selection
-  var saved = {}
-  axios.get('/search')
-    .then(function (response) {
-      console.log('this activated successfully')
-      saved = response.data
-      console.log(saved)
-    }) 
-    .then(function (error) {
-      console.log(error)
+  const [inputQ, setInputQ] = useState()
+  const [sentiData, setSentiData] = useState([])
+  const [sarcData, setSarcData] = useState([])
+  const [tweets, setTweets] = useState([])
+
+
+  // axios request
+  function getAxiosData() {
+    axios.get('/search/recent').then((response) => {
+      if (response.status === 200) {
+        if (response.data) {
+          setInputQ(response.data.input)
+          setSentiData(response.data.senti)
+          setSarcData(response.data.sarc)
+          setTweets(response.data.tweets)
+        }
+      }
     })
-    .then(function () {
-      console.log('done...')
-    })
+  }
 
   const sentiData2 = [
     {
       name: 'positive',
-      amt: 100,
+      amt: sentiData[0],
       fill: '#82ca9d'
     },
     {
       name: 'negative',
-      amt: 20,
+      amt: sentiData[1],
       fill: '#8884d8'
     }
   ]
 
+  const sarcData2 = [
+    {
+      name: 'sarcastic',
+      amt: sarcData[0],
+      fill: '#82ca9d'
+    },
+    {
+      name: 'not sarcastic',
+      amt: sarcData[1],
+      fill: '#8884d8'
+    }
+  ]
+
+  // GENERATE GRAPHS
   const createBar =(inputData) => {
     return (
       <BarChart
@@ -92,17 +112,22 @@ export default function Results({selection}) {
     )
   }
 
+
+  useEffect(() => {
+    getAxiosData()
+  }, [])
+
   return (
     <>
       <div className='results-region'>
         <h2>Your customised report:</h2>
         <br/>
-        <div>user input was: </div>
+        <div>user input was: {inputQ}</div>
         <div className='graphs-container'>
           {sel[0] ? <div className='graphs'><p>Sentiment Analysis Barchart</p>{createBar(sentiData2)}</div> : null} <br/>
           {sel[1] ? <div className='graphs'><p>Sentiment Analysis Piechart</p>{createPie(sentiData2)}</div> : null} <br/>
-          {sel[2] ? <div className='graphs'><p>Sarcasm Detection Piechart</p>{createBar(sentiData2)}</div> : null} <br/>
-          {sel[3] ? <div className='graphs'><p>Wordcloud</p>{SimpleWordcloud(words)}</div> : null} <br/>
+          {sel[2] ? <div className='graphs'><p>Sarcasm Detection Piechart</p>{createBar(sarcData2)}</div> : null} <br/>
+          {/* {sel[3] ? <div className='graphs'><p>Wordcloud</p>{SimpleWordcloud(words)}</div> : null} <br/> */}
         </div>
       </div>
     </>
