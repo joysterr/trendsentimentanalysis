@@ -19,6 +19,7 @@ app = Flask(__name__)
 client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = client.tsa_db
 clt = db.tsa_collection
+clt_us = db.tsa_user_support
 
 # http requests handling
 @app.route('/')
@@ -53,7 +54,7 @@ def search():
             'tweets': tweets_processed
         }
         
-        # create in mongodb
+        # save in mongodb
         clt.insert_one(output)
 
         return (f'200: OK | Request recieved: {user_input}')
@@ -67,9 +68,15 @@ def get_recent():
         ))
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/userfeedback', methods = ['GET', 'POST'])
-def userfeedback():
-    if request.method == 'GET':
+@app.route('/usersupport', methods = ['GET', 'POST'])
+def user_support():
+    if request.method == 'POST':
+
+        support_query = request.get_json(force=True)
+        print(support_query, type(support_query))
+        
+        clt_us.insert_one(support_query)
+        
         return ('feedback saved')
 
 # exec server

@@ -1,10 +1,25 @@
 import React from 'react'
-//import axios from "axios";
+import axios from "axios";
 import './Contact.css'
 
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
+    axios.post('/usersupport', 
+      {
+        emailId: (document.getElementById('inputEmail').value),
+        queryIn: (document.getElementById('inputQuery').value)
+      }
+    )
+      .then(function (response) {
+        console.log(response)
+      })
+      .then(function(){
+        document.getElementById('contactForm').reset()
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
     console.log('okay, we got your cry for help')
   }
 
