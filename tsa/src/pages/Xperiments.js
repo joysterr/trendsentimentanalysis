@@ -6,7 +6,8 @@ export default function Xperiments() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('wanna read a poetry huh?')
+    console.log('wanna read a poetry huh? \n give me a <br/>')
+    document.getElementById('inputPoemStart').value = '' //reset
   }
 
   return (
@@ -20,7 +21,7 @@ export default function Xperiments() {
         <form id='searchForm' onSubmit={handleSubmit}>
           <input
             type='text'
-            id='inputSearch'
+            id='inputPoemStart'
             placeholder='Type a few words here'
             name='searchbar'
           />
