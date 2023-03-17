@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import { Tooltip, Legend, PieChart, Pie } from 'recharts';
 import './About.css'
 
 export default function About() {
   const [userName, setUserName] = useState()
   const [showMsg, setShowMsg] = useState(false)
+  const [sentiData, setSentiData] = useState([])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -30,6 +32,50 @@ export default function About() {
         console.log(error)
       })
   }
+
+  // axios request
+  function getAxiosDataPerf() {
+    axios.get('/userfeedback/senti').then((response) => {
+      if (response.status === 200) {
+        if (response.data) {
+          setSentiData(response.data)
+          console.log(response.data)
+        }
+      }
+    })
+  }
+
+  const createPie =(inputData) => {
+    return (
+      <PieChart width={500} height={500}>
+        <Pie
+          data={inputData}
+          dataKey='amt'
+          outerRadius={220}
+          fill='fill'
+        />
+        <Legend/>
+        <Tooltip />
+      </PieChart>
+    )
+  }
+
+  const sentiData2 = [
+    {
+      name: 'positive',
+      amt: sentiData[0],
+      fill: '#82ca9d'
+    },
+    {
+      name: 'negative',
+      amt: sentiData[1],
+      fill: '#8884d8'
+    }
+  ]
+
+  useEffect(() => {
+    getAxiosDataPerf()
+  }, [])
 
   return (
     <>  
@@ -93,8 +139,8 @@ export default function About() {
         <h3>tsa. performance (based on feedback):</h3>
       </div>
       <div className='tsa-perf'>
+        <div>{createPie(sentiData2)}</div>
         <img src="https://via.placeholder.com/500x500/?text=tsa. performance" alt='placeholder'></img>
-
       </div>
     </>
   )
