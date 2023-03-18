@@ -6,7 +6,7 @@ export default function Xperiments() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('wanna read a poetry huh? \n give me a <br/>')
+    console.log('wanna read poetry huh? \n give me a <br/>')
     document.getElementById('inputPoemStart').value = '' //reset
   }
 

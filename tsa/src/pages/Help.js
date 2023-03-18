@@ -6,7 +6,7 @@ export default function Help() {
   return (
     <>
       <div className='about-container'>
-        <h1>Need help?</h1> <br/>
+        <h1>Need help?</h1> <br />
       </div>
 
       <div className='divider-black'>
@@ -17,7 +17,7 @@ export default function Help() {
         <Contact />
       </div>
       <div className='message-end'>
-        <p>(we aim to get back to you within 24hours)</p> <br/>
+        <p>(we aim to get back to you within 24hours)</p> <br />
       </div>
     </>
   )
