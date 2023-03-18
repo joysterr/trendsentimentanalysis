@@ -22,10 +22,10 @@ export default function About() {
         ratingVal: ratingValIn,
       }
     )
-      .then(function (response){
+      .then(function (response) {
         console.log(response)
       })
-      .then(function (){
+      .then(function () {
         document.getElementById('feedbackForm').reset()
       })
       .catch(function (error) {
@@ -45,7 +45,7 @@ export default function About() {
     })
   }
 
-  const createPie =(inputData) => {
+  const createPie = (inputData) => {
     return (
       <PieChart width={500} height={500}>
         <Pie
@@ -54,7 +54,7 @@ export default function About() {
           outerRadius={220}
           fill='fill'
         />
-        <Legend/>
+        <Legend />
         <Tooltip />
       </PieChart>
     )
@@ -78,16 +78,16 @@ export default function About() {
   }, [])
 
   return (
-    <>  
+    <>
       <div className='about-title'>
         <h1>Who am I? What am I? Why am I?</h1>
       </div>
       <div className='intro-subhead'>
-        हेलो! I am tsa. <br/>
-        I was developed to understand 'natural language'. <br/>
-        I understand emotions from an array of strings, or "sentences".<br/>
-        Thank you to my creator, joy, who trained me to understand sentiments<br/>
-        behind these oridinary sequences of 1s & 0s. <br/>
+        हेलो! I am tsa. <br />
+        I was developed to understand 'natural language'. <br />
+        I understand emotions from an array of strings, or "sentences".<br />
+        Thank you to my creator, joy, who trained me to understand sentiments<br />
+        behind these oridinary sequences of 1s & 0s. <br />
         Bye ^_^
       </div>
 
@@ -96,7 +96,7 @@ export default function About() {
       </div>
 
       <div className='feedback-subtitle'>
-        <p>(feedback helps me improve!)</p> <br/>
+        <p>(feedback helps me improve!)</p> <br />
       </div>
 
       <div className='feedback-form'>
@@ -107,7 +107,7 @@ export default function About() {
             placeholder='Name'
             name='inputEmail'
           />
-          <br/>
+          <br />
           <textarea
             type=''
             id='inputFeedback'
@@ -116,13 +116,13 @@ export default function About() {
             className='feedback-input'
             required
           />
-          <br/>
+          <br />
           <label>Rate your experience: </label>
           <select name='rate' id='rate' required>
             <option value={1}>Good👍</option>
             <option value={0}>Bad👎</option>
           </select>
-          <br/>
+          <br />
           <button id='btn-feedback' type='submit' onClick={handleSubmit}>
             Submit
           </button>
@@ -132,7 +132,7 @@ export default function About() {
       {showMsg ? <div className='user-msg'>Thank you {userName} for your feedback :)</div> : null}
 
       <div className='feedback-subtitle'>
-        <p>(feedback you provide (anonymised) can be used to train the sentiment analysis/sarcasm models)</p> <br/> {/*if automated can cause corpus poisoning*/}
+        <p>(feedback you provide (anonymised) can be used to train the sentiment analysis/sarcasm models)</p> <br /> {/*if automated can cause corpus poisoning*/}
       </div>
 
       <div className='divider-black'>

@@ -5,7 +5,7 @@ import './Contact.css'
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/usersupport', 
+    axios.post('/usersupport',
       {
         emailId: (document.getElementById('inputEmail').value),
         queryIn: (document.getElementById('inputQuery').value)
@@ -14,7 +14,7 @@ export default function Contact() {
       .then(function (response) {
         console.log(response)
       })
-      .then(function(){
+      .then(function () {
         document.getElementById('contactForm').reset()
       })
       .catch(function (error) {
@@ -35,7 +35,7 @@ export default function Contact() {
                 placeholder='email address'
                 name='inputEmail'
               />
-              <br/>
+              <br />
               <textarea
                 type=''
                 id='inputQuery'
@@ -43,13 +43,13 @@ export default function Contact() {
                 name='inputquery'
                 className='query-input'
               />
-              <br/>
+              <br />
               <button id='btn-login' type='submit' onClick={handleSubmit}>
                 Submit
               </button>
             </form>
           </div>
-        </div>  
+        </div>
       </div>
     </>
   )

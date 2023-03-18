@@ -19,18 +19,18 @@ function App() {
       <Navbar />
       <div className='container'>
         <Routes>
-          <Route path='/' element={ <Home /> } />
-          <Route path='/tsa' element={ <Tsa /> } />
-          <Route path='/xperiments' element={ <Xperiments /> } />
-          <Route path='/help' element={ <Help /> } />
-          <Route path='/contact' element={ <Contact /> } />
-          <Route path='/about' element={ <About />} />
-          <Route path='/login' element={ <Login /> } />
-          <Route path='/signup' element={ <Signup /> } />
+          <Route path='/' element={<Home />} />
+          <Route path='/tsa' element={<Tsa />} />
+          <Route path='/xperiments' element={<Xperiments />} />
+          <Route path='/help' element={<Help />} />
+          <Route path='/contact' element={<Contact />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
         <Chatbot />
       </div>
-        <Footer />
+      <Footer />
     </>
   )
 }

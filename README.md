@@ -27,14 +27,17 @@
 # [Prerequisites] Note to devs/mods/tutors/assessors:
 ## To test out this app on your local machines you will have to do the following
 ## Front-end
-- launch terminal and type witin:
-- cd tsa
-- npm install
+```
+cd tsa
+npm install
+```
 
 ## Back-end
-(IMP: its recommended that you perfrom the following actions within a virtual python environment to work in a non-destructive way)
+```
+cd server
+python3 -m venv /venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+>(IMP: its recommended that you perfrom the following actions within a virtual python environment to work in a non-destructive way)
 (below example assumes you already have a virtual environment setup for Flask/backend development)
-- launch terminal and type witin:
-- cd server
-- source venv/bin/activate
-- pip install -r requirements.txt

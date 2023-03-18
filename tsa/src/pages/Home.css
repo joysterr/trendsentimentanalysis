@@ -29,7 +29,8 @@
 }
 
 .img-title {
-    height: 3rem;
+    height: 8rem;
+    width: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,6 +38,32 @@
     background-color: black;
     font-size: 1rem;
     border: 2px solid whitesmoke;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
+.img-title:hover {
+    color: black;
+    background-color: aliceblue;
+}
+
+.features-set {
+    margin: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.homepage-img {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    /* width: 50%; */
+    /* align-items: center; */
+}
+
+.homepage-img img {
+    height: 10rem;
+    width: 10rem;
+}
