@@ -4,10 +4,12 @@ import './Poetry.css'
 export default function Poetry() {
   return (
     <>
-        <div className='poetry-container'>
-            <h1>Poetry by tsa.:</h1> <br/>
-            <p>Est consectetur et culpa magna esse minim aliqua nulla incididunt nulla anim. Sunt cupidatat cillum tempor incididunt eiusmod incididunt veniam commodo nisi. Et nisi duis ipsum veniam incididunt aliqua qui consequat. Ullamco sit labore esse aliqua aliquip culpa officia non nulla ea.</p>
-        </div>
+      <div className='poetry-container'>
+        <h1>Poetry by tsa.:</h1> <br />
+        <p>Poetry is the interesting act of finding natural yun behind every door, where the poet hath hymned the drops of life, faithful to learn and write...</p>
+        <br /><br />
+        <h6>The 'poem' above was generated using tsa's poem generator model, which is under development.</h6>
+      </div>
     </>
   )
 }

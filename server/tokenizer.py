@@ -18,5 +18,5 @@ def senti_tokenizer(input):
         senti_tokenizer = pickle.load(handle)
 
     seq = senti_tokenizer.texts_to_sequences(input)
-    pad = pad_sequences(seq, maxlen=150, padding='pre', truncating='pre')
+    pad = pad_sequences(seq, maxlen=150, padding='post', truncating='post')
     return pad

@@ -30,13 +30,13 @@ export default function Login() {
               </button>
             </form>
             <button id='btn-signup' className='sign-button'>
-            <Link to='/signup' className='signup-link'>
-              Signup
-            </Link>
+              <Link to='/signup' className='signup-link'>
+                Signup
+              </Link>
             </button>
           </div>
 
-        </div>  
+        </div>
       </div>
     </>
   )
