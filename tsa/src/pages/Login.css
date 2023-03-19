@@ -91,3 +91,48 @@
     text-decoration: none;
     color: inherit;
 }
+
+/* mobile optimisations */
+@media only screen and (max-width: 600px) {
+    .login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .login-title-left {
+        color: white;
+        text-align: center;
+    }
+
+    .login-box-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        /* width: 451px;
+        height: 603px; */
+        max-width: fit-content;
+    }
+
+    #inputEmail {
+        max-width: fit-content;
+    }
+
+    #inputPassword {
+        max-width: fit-content;
+    }
+
+    #btn-login {
+        background-color: gray;
+    }
+
+    #btn-signup {
+        margin-bottom: 1rem;
+        background-color: gray;
+    }
+
+}
