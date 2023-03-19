@@ -50,3 +50,14 @@
     display: flex;
     justify-content: center;
 }
+
+/* mobile optimisations */
+@media only screen and (max-width: 600px) {
+    #inputPoemStart {
+        max-width: fit-content;
+    }
+
+    .poetry-container h1 {
+        font-size: 0.9rem;
+    }
+}

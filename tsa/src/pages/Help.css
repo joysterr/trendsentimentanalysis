@@ -27,3 +27,20 @@
     color: gray;
     font-size: 0.8rem;
 }
+
+/* mobile optimisations */
+@media only screen and (max-width: 600px) {
+    #inputEmail {
+        max-width: fit-content;
+    }
+    #inputQuery {
+        max-width: fit-content;
+        width: inherit;
+    }
+
+    .contact-container {
+        margin: 5rem;
+        margin-left: 0rem;
+        margin-right: 0rem;
+    }
+}

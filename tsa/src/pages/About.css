@@ -104,3 +104,25 @@
     color: gray;
     font-size: 13px;
 }
+
+/* mobile optimisations */
+@media only screen and (max-width: 600px) {
+    .tsa-perf {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .recharts-wrapper {
+        max-width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* unresolved */
+    .perf-pie {
+        display: flex;
+        overflow-x: hidden;
+    }
+}

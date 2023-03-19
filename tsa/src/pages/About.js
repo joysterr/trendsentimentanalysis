@@ -139,7 +139,8 @@ export default function About() {
         <h3>tsa. performance (based on feedback):</h3>
       </div>
       <div className='tsa-perf'>
-        <div>{createPie(sentiData2)}</div>
+        {/* unresolved css */}
+        <div className='perf-pie'>{createPie(sentiData2)}</div>
         <img src="https://via.placeholder.com/500x500/?text=tsa. performance" alt='placeholder'></img>
       </div>
     </>
