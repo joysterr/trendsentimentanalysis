@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import './Results.css'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie } from 'recharts';
-import ReactWordcloud from 'react-wordcloud'
+// import ReactWordcloud from 'react-wordcloud'
 
 export default function Results({ selection }) {
   const sel = selection
   const [inputQ, setInputQ] = useState()
   const [sentiData, setSentiData] = useState([])
   const [sarcData, setSarcData] = useState([])
-  const [tweets, setTweets] = useState([])
+  // const [tweets, setTweets] = useState([])
 
 
   // axios request
@@ -20,7 +20,7 @@ export default function Results({ selection }) {
           setInputQ(response.data.input)
           setSentiData(response.data.senti)
           setSarcData(response.data.sarc)
-          setTweets(response.data.tweets)
+          // setTweets(response.data.tweets)
         }
       }
     })
@@ -84,33 +84,33 @@ export default function Results({ selection }) {
     )
   }
 
-  const words = [
-    {
-      text: 'told',
-      value: 64,
-    },
-    {
-      text: 'mistake',
-      value: 11,
-    },
-    {
-      text: 'thought',
-      value: 16,
-    },
-    {
-      text: 'bad',
-      value: 17,
-    },
-  ]
+  // const words = [
+  //   {
+  //     text: 'told',
+  //     value: 64,
+  //   },
+  //   {
+  //     text: 'mistake',
+  //     value: 11,
+  //   },
+  //   {
+  //     text: 'thought',
+  //     value: 16,
+  //   },
+  //   {
+  //     text: 'bad',
+  //     value: 17,
+  //   },
+  // ]
 
-  const SimpleWordcloud = (words) => {
-    return (
-      <ReactWordcloud
-        words={words}
-        size={[500, 500]}
-      />
-    )
-  }
+  // const SimpleWordcloud = (words) => {
+  //   return (
+  //     <ReactWordcloud
+  //       words={words}
+  //       size={[500, 500]}
+  //     />
+  //   )
+  // }
 
 
   useEffect(() => {
