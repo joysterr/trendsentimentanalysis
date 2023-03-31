@@ -7,6 +7,8 @@ def preprocess(url):
     import string
     import emoji_processing as emo
 
+    from bs4 import BeautifulSoup
+    
     # import output file
     
     df_tweets = pd.read_csv(url)
@@ -19,12 +21,15 @@ def preprocess(url):
     tweets_clean = []
 
     for item in tweets_arr:
+        soup = BeautifulSoup(item, 'html.parser')
+        item = soup.get_text()
         item = item.lower()
         item = item.replace('rt', '')
         item = re.sub(r'http\S+', '', item)
         item = re.sub('@[^\s]+', '', item)
         item = "".join([char for char in item if char not in string.punctuation])
         item = re.sub('[0-9]+', '', item)
+        item = re.sub('[^a-zA-Z]', ' ', item)
         tweets_clean.append(item)
             
     tweets_noemo = []
