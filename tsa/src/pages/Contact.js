@@ -5,7 +5,7 @@ import './Contact.css'
 export default function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post('/usersupport',
+    axios.post('/supportreqs',
       {
         emailId: (document.getElementById('inputEmail').value),
         queryIn: (document.getElementById('inputQuery').value)

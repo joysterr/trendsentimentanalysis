@@ -29,7 +29,7 @@ clt_uf = db.tsa_user_feedback #user feedback store
 def test():
     return('welcome to tsa!')
 
-@app.route('/search', methods = ['POST', 'GET'])
+@app.route('/searches', methods = ['POST', 'GET'])
 def search():
     output = {}
     if request.method == 'POST':
@@ -65,8 +65,11 @@ def search():
             
         
         return (f'200: OK | Request recieved: {user_input}')
+    if request.method == 'GET':
+        data_export = dict(clt.find({}))
+        return json.loads(json_util.dumps(data_export))
    
-@app.route('/search/recent', methods = ['GET'])  
+@app.route('/searches/recent', methods = ['GET'])  
 def get_recent():
     if request.method == 'GET':
         data_export = dict(clt.find_one(
@@ -75,7 +78,7 @@ def get_recent():
         ))
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/usersupport', methods = ['GET', 'POST'])
+@app.route('/supportreqs', methods = ['GET', 'POST'])
 def user_support():
     if request.method == 'POST':
 
@@ -89,7 +92,7 @@ def user_support():
         data_export = dict(clt_us.find())
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/userfeedback', methods = ['GET', 'POST'])
+@app.route('/feedbacks', methods = ['GET', 'POST'])
 def user_feedback():
     if request.method == 'POST':
 
@@ -103,7 +106,7 @@ def user_feedback():
         data_export = dict(clt_uf.find())
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/userfeedback/senti', methods = ['GET'])
+@app.route('/feedbacks/senti', methods = ['GET'])
 def analyse_feedback():
     if request.method == 'GET':
         data_import = clt_uf.find()

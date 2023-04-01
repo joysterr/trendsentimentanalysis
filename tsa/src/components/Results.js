@@ -14,7 +14,7 @@ export default function Results({ selection }) {
 
   // axios request
   function getAxiosData() {
-    axios.get('/search/recent').then((response) => {
+    axios.get('/searches/recent').then((response) => {
       if (response.status === 200) {
         if (response.data) {
           setInputQ(response.data.input)

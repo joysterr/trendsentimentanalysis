@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Home.css'
 
 export default function Home() {
@@ -14,10 +15,18 @@ export default function Home() {
       </div>
       <div className='features-set'>
         <div className='homepage-img'>
-          <div className='img-title'> Sentiment Analysis</div>
+          <div className='img-title'>
+            <Link to='/info' className='feature-link'>
+              Sentiment Analysis
+            </Link>
+          </div>
         </div>
         <div className='homepage-img'>
-          <div className='img-title'> Sarcasm Detection</div>
+          <div className='img-title'>
+            <Link to='/info' className='feature-link'>
+              Sarcasm Detection
+            </Link>
+          </div>
         </div>
       </div>
       <div className='divider-black'>
