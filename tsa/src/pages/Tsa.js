@@ -18,7 +18,7 @@ export default function Tsa() {
     var input = document.getElementById('inputSearch').value
     console.log('user said: ', input)
 
-    axios.post('/search', input.toString())
+    axios.post('/searches', input.toString())
       .then(function (response) {
         console.log(response)
         // setResponse(response)
@@ -82,7 +82,7 @@ export default function Tsa() {
           <label><input type='checkbox' id='bar' value='0' className='custom-check'></input> barchart</label>
           <label><input type='checkbox' id='pie' value='0' className='custom-check'></input> piechart</label>
           <label><input type='checkbox' id='sarc' value='0' className='custom-check'></input> sarcasm detect</label>
-          <label><input type='checkbox' id='wordm' value='0' className='custom-check'></input> wordmap</label>
+          <label><input type='checkbox' id='wordm' value='0' className='custom-check'></input> results table</label>
 
           <button id='btn-save' onClick={customiseReport}>Save</button>
         </div>

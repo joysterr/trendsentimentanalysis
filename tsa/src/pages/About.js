@@ -16,7 +16,7 @@ export default function About() {
     var feedbackIn = document.getElementById('inputFeedback').value
     var ratingValIn = document.getElementById('rate').value
 
-    axios.post('/userfeedback',
+    axios.post('/feedbacks',
       {
         feedback: feedbackIn,
         ratingVal: ratingValIn,
@@ -35,7 +35,7 @@ export default function About() {
 
   // axios request
   function getAxiosDataPerf() {
-    axios.get('/userfeedback/senti').then((response) => {
+    axios.get('/feedbacks/senti').then((response) => {
       if (response.status === 200) {
         if (response.data) {
           setSentiData(response.data)

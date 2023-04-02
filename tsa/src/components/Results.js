@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import './Results.css'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie } from 'recharts';
+import Table from './Table';
 // import ReactWordcloud from 'react-wordcloud'
 
 export default function Results({ selection }) {
@@ -14,7 +15,7 @@ export default function Results({ selection }) {
 
   // axios request
   function getAxiosData() {
-    axios.get('/search/recent').then((response) => {
+    axios.get('/searches/recent').then((response) => {
       if (response.status === 200) {
         if (response.data) {
           setInputQ(response.data.input)
@@ -127,7 +128,7 @@ export default function Results({ selection }) {
           {sel[0] ? <div className='graphs'><p>Sentiment Analysis Barchart</p>{createBar(sentiData2)}</div> : null} <br />
           {sel[1] ? <div className='graphs'><p>Sentiment Analysis Piechart</p>{createPie(sentiData2)}</div> : null} <br />
           {sel[2] ? <div className='graphs'><p>Sarcasm Detection Piechart</p>{createBar(sarcData2)}</div> : null} <br />
-          {/* {sel[3] ? <div className='graphs'><p>Wordcloud</p>{SimpleWordcloud(words)}</div> : null} <br/> */}
+          {sel[3] ? <div className='graphs'><p>Results Table</p>{<Table />}</div> : null} <br/>
         </div>
       </div>
     </>

@@ -1,6 +1,6 @@
 # imports
 from flask import Flask
-from flask import request
+from flask import request, make_response
 import pandas as pd
 import json
 import pymongo
@@ -29,22 +29,22 @@ clt_uf = db.tsa_user_feedback #user feedback store
 def test():
     return('welcome to tsa!')
 
-@app.route('/search', methods = ['POST', 'GET'])
+@app.route('/searches', methods = ['POST', 'GET'])
 def search():
     output = {}
     if request.method == 'POST':
         user_input = request.get_data(as_text=True)
         input_query = user_input
         print(user_input, type(user_input))
-        # tapi.exec_tapi(input_query) # send search parameter to twitter api  (TURN OFF FOR TESTING)
+        #tapi.exec_tapi(input_query) # send search parameter to twitter api  (TURN OFF FOR TESTING)
         tweets_processed = pre.preprocess('./exports/tweepy_output/results.csv')
+        print(tweets_processed)
         tweet_vect = tknz.senti_tokenizer(tweets_processed)
         tweet_vect2 = tknz.sarc_tokenizer(tweets_processed)
-        print(tweet_vect)
-        senti_results = brain.predict_senti(tweet_vect)
-        print(senti_results)
-        sarc_results = brain.predict_sarc(tweet_vect2)
         
+        senti_results = brain.predict_senti(tweet_vect)
+        sarc_results = brain.predict_sarc(tweet_vect2)
+        print(senti_results)
         # exports
         senti_export = brain.convert_setiments(senti_results)
         print(senti_export)
@@ -59,14 +59,43 @@ def search():
         
         # save in mongodb
         clt.insert_one(output)
-
+        
+        og_tweets = pd.read_csv('./exports/tweepy_output/results.csv')
+        senti_output = []
+        sarc_output = []
+        
+        for item in senti_results:
+            if item > 0.5:
+                senti_output.append('positive')
+            else:
+                senti_output.append('negative')
+                
+        for item in sarc_results:
+            if item > 0.5:
+                sarc_output.append('sarc')
+            else:
+                sarc_output.append('not_sarc')
+        
+        all_data = {
+            'input': input_query,
+            'tweets': og_tweets['Tweet'],
+            'sentiment': senti_output,
+            'sarcasm': sarc_output
+        }
+        col = ['input', 'tweets','sentiment','sarcasm']
+        df_data = pd.DataFrame(all_data, columns=col)
+        df_data.to_csv('temp/tsa_grand_results.csv')
+        
         # export wordcloud graph only    
         # ggen.create_wordcloud(tweets_processed) #(TURN OFF if not needed)
             
         
         return (f'200: OK | Request recieved: {user_input}')
+    if request.method == 'GET':
+        data_export = dict(clt.find({}))
+        return json.loads(json_util.dumps(data_export))
    
-@app.route('/search/recent', methods = ['GET'])  
+@app.route('/searches/recent', methods = ['GET'])  
 def get_recent():
     if request.method == 'GET':
         data_export = dict(clt.find_one(
@@ -75,7 +104,7 @@ def get_recent():
         ))
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/usersupport', methods = ['GET', 'POST'])
+@app.route('/supportreqs', methods = ['GET', 'POST'])
 def user_support():
     if request.method == 'POST':
 
@@ -89,7 +118,7 @@ def user_support():
         data_export = dict(clt_us.find())
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/userfeedback', methods = ['GET', 'POST'])
+@app.route('/feedbacks', methods = ['GET', 'POST'])
 def user_feedback():
     if request.method == 'POST':
 
@@ -103,7 +132,7 @@ def user_feedback():
         data_export = dict(clt_uf.find())
         return json.loads(json_util.dumps(data_export))
 
-@app.route('/userfeedback/senti', methods = ['GET'])
+@app.route('/feedbacks/senti', methods = ['GET'])
 def analyse_feedback():
     if request.method == 'GET':
         data_import = clt_uf.find()
@@ -123,6 +152,26 @@ def analyse_feedback():
         resp = [senti_conv['pos'], senti_conv['neg']]
         return resp
 
+
+@app.route('/downloadcsv', methods = ['GET'])
+def download_csv():
+    with open('temp/tsa_grand_results.csv', 'r') as f:
+        csv_data = f.read()
+    return csv_data
+
+@app.route('/tsatests', methods = ['POST'])
+def test_tsa():
+    test_input = [request.get_data(as_text=True)]
+    # input_processed = pre.preprocess(test_input)
+    input_vect_pad = tknz.senti_tokenizer(test_input)
+    model_out = brain.predict_senti(input_vect_pad)
+    
+    if model_out > 0.5:
+        test_result = 'Positive 👍'
+    else:
+        test_result = 'Negative 👎'
+    return test_result
+    
 # exec server
 if (__name__) ==  '__main__':
     app.run(debug=True)

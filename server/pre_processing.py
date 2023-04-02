@@ -41,3 +41,21 @@ def preprocess(url):
     # testing
     # for item in tweets_noemo:
     #     print(f'{item}\n')
+    
+def clean_tweets(arr):
+    import re
+    import string
+    from bs4 import BeautifulSoup
+    tweets_clean = []
+    for item in arr:
+        soup = BeautifulSoup(item, 'html.parser')
+        item = soup.get_text()
+        item = item.lower()
+        item = item.replace('rt', '')
+        item = re.sub(r'http\S+', '', item)
+        item = re.sub('@[^\s]+', '', item)
+        item = "".join([char for char in item if char not in string.punctuation])
+        item = re.sub('[0-9]+', '', item)
+        item = re.sub('[^a-zA-Z]', ' ', item)
+        tweets_clean.append(item)
+        return tweets_clean

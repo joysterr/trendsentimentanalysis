@@ -12,6 +12,7 @@ import Signup from './pages/Signup'
 import Xperiments from './pages/Xperiments';
 import Footer from './components/Footer';
 import Chatbot from './components/Chatbot';
+import Info from './pages/Info';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
+          <Route path='/info' element={<Info />} />
         </Routes>
         <Chatbot />
       </div>

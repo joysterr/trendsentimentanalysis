@@ -14,9 +14,10 @@ def sarc_tokenizer(input):
 
 # vectorizing and padding for sentiment input
 def senti_tokenizer(input):
-    with open('./util/senti_tokenzier.pickle', 'rb') as handle:
+    with open('./models/airline_senti_tokenzier2.pickle', 'rb') as handle:
         senti_tokenizer = pickle.load(handle)
 
     seq = senti_tokenizer.texts_to_sequences(input)
-    pad = pad_sequences(seq, maxlen=150, padding='post', truncating='post')
+    pad = pad_sequences(seq, maxlen=50, padding='pre', truncating='pre') #change maxlen based on model/tokenizer
+    #pad = pad_sequences(seq, maxlen=50, padding='post', truncating='post') #change maxlen based on model/tokenizer
     return pad

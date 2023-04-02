@@ -68,6 +68,12 @@
     width: 10rem;
 }
 
+.feature-link {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* mobile optimisation */
 @media only screen and (max-width: 600px) {
     .features-set {
