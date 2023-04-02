@@ -1,7 +1,8 @@
 import tensorflow as tf
+# tf.config.run_functions_eagerly(True)
 
 #load model
-senti_model = tf.keras.models.load_model('./models/senti_model1.h5')
+senti_model = tf.keras.models.load_model('./models/twitter_airline_model3.h5')
 sarc_model = tf.keras.models.load_model('./models/sarc_model2.h5')
 
 #sentiment analysis 
@@ -19,6 +20,14 @@ def convert_setiments(model_output):
             senti_dict['neg'] += 1
     return senti_dict
 
+def convert_setiments2(model_output):
+    senti_dict = {'pos': 0, 'neg': 0}
+    for val in model_output:
+        if val[0] < val[1]:
+            senti_dict['pos'] += 1
+        else:
+            senti_dict['neg'] += 1
+    return senti_dict
 
 #sarcasm detection 
 def predict_sarc(input):

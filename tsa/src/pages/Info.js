@@ -16,8 +16,9 @@ export default function Info() {
                             <li>1. Carefully type your search query into the search box </li>
                             <li>2. Click the search button </li>
                             <li>3. Customise the report by chosing given options</li>
+                            <li>3.1. For full tabular results choose 'result table' option</li>
                             <li>4. Results in graphical form generated</li>
-                            <li>5. Hover over results to see values</li>
+                            <li>5. Hover over graph results to see values</li>
                         </ul>
 
                     </div>
@@ -29,7 +30,7 @@ export default function Info() {
                             <li>2. Click the search button </li>
                             <li>3. Ensure you tick 'Sarcasm Detection' </li>
                             <li>4. Results generated as a pie chart</li>
-                            <li>5. Hover over results to see values</li>
+                            <li>5. Hover over graph results to see values</li>
                         </ul>
                     </div>
                 </div>

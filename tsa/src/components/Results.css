@@ -22,3 +22,12 @@
     margin: 1rem;
     font-style: oblique;
 }
+
+@media only screen and (max-width: 600px) {
+    .graphs{
+        scale: 0.7;
+    }
+    .graphs p {
+        scale: 1.2;
+    }
+}
