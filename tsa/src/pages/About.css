@@ -1,4 +1,3 @@
-
 .about-title {
     margin-top: 10rem;
     margin-bottom: 2rem;
@@ -19,7 +18,6 @@
     width: 100%;
     height: 5rem;
 }
-
 
 .feedback-subtitle {
     margin-top: 1rem;
@@ -54,7 +52,7 @@
     width: 350px;
     border: none;
     border-radius: 15px;
-    background-color:#f2f2f2;
+    background-color: #f2f2f2;
 }
 
 .feedbackForm label {
@@ -120,12 +118,7 @@
         justify-content: center;
         align-items: center;
     }
-    
-    /* unresolved
-    .perf-pie {
-        display: flex;
-        overflow-x: hidden;
-    } */
+
     .perf-pie {
         display: flex;
         flex-direction: column;

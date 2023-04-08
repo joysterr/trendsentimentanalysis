@@ -5,7 +5,6 @@
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    /* background-image: url('/Users/joy/Documents/GitHub/trendsentimentanalysis/tsa/public/favicon.ico'); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -20,7 +19,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #F1F1F1;
+    background-color: #f1f1f1;
     width: 451px;
     height: 603px;
 }
@@ -47,7 +46,6 @@
     border-color: black;
     border-radius: 15px;
     width: 350px;
-    /* max-width: auto; */
     font-size: 14px;
 }
 
@@ -113,8 +111,6 @@
         justify-content: center;
         align-items: center;
         background-color: black;
-        /* width: 451px;
-        height: 603px; */
         max-width: fit-content;
     }
 
@@ -134,5 +130,4 @@
         margin-bottom: 1rem;
         background-color: gray;
     }
-
 }
