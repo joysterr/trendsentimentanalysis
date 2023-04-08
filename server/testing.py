@@ -8,13 +8,13 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 class TestPreprocess(unittest.TestCase):
 
     def test_preprocess(self):
-        # create sample data
+        # sample data
         tweets_arr = ['<p>This is a test tweet! https://example.com</p>']
 
-        # expected output after preprocessing
+        # expected output
         expected_output = ['this is a test tweet ']
 
-        # preprocess the data
+        # pre-process the data
         actual_output = pp.clean_tweets(tweets_arr)
 
         # compare actual output with expected output
@@ -28,16 +28,16 @@ class TestPreprocess(unittest.TestCase):
 
 
     def test_convert_sentiments(self):
-        # Define the test input
+        # test input
         test_input = np.array([[0.8], [0.2], [0.6], [0.4], [0.9]]) 
 
-        # Define the expected output
+        # expected output
         expected_output = {'pos': 3, 'neg': 2}
 
-        # Convert the model output to sentiments
+        # model output to sentiments
         senti_dict = tsa.convert_setiments(test_input)
 
-        # Check that the output is as expected
+        # Compare output with expected
         self.assertEqual(senti_dict, expected_output)
 
     

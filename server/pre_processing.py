@@ -38,10 +38,8 @@ def preprocess(url):
         tweets_noemo.append(x)
 
     return tweets_noemo
-    # testing
-    # for item in tweets_noemo:
-    #     print(f'{item}\n')
-    
+
+# for testing    
 def clean_tweets(arr):
     import re
     import string

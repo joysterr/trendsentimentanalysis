@@ -16,6 +16,7 @@ import graph_gen as ggen
 
 app = Flask(__name__)
 
+# mongodb connection
 client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
 db = client.tsa_db
 
@@ -36,7 +37,7 @@ def search():
         user_input = request.get_data(as_text=True)
         input_query = user_input
         print(user_input, type(user_input))
-        #tapi.exec_tapi(input_query) # send search parameter to twitter api  (TURN OFF FOR TESTING)
+        tapi.exec_tapi(input_query) # send search parameter to twitter api  (TURN OFF FOR TESTING)
         tweets_processed = pre.preprocess('./exports/tweepy_output/results.csv')
         print(tweets_processed)
         tweet_vect = tknz.senti_tokenizer(tweets_processed)
@@ -86,11 +87,8 @@ def search():
         df_data = pd.DataFrame(all_data, columns=col)
         df_data.to_csv('temp/tsa_grand_results.csv')
         
-        # export wordcloud graph only    
-        # ggen.create_wordcloud(tweets_processed) #(TURN OFF if not needed)
-            
-        
         return (f'200: OK | Request recieved: {user_input}')
+    
     if request.method == 'GET':
         data_export = dict(clt.find({}))
         return json.loads(json_util.dumps(data_export))
