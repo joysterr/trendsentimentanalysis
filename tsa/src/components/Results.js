@@ -3,14 +3,12 @@ import './Results.css'
 import axios from 'axios'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, PieChart, Pie } from 'recharts';
 import Table from './Table';
-// import ReactWordcloud from 'react-wordcloud'
 
 export default function Results({ selection }) {
   const sel = selection
   const [inputQ, setInputQ] = useState()
   const [sentiData, setSentiData] = useState([])
   const [sarcData, setSarcData] = useState([])
-  // const [tweets, setTweets] = useState([])
 
 
   // axios request
@@ -21,7 +19,6 @@ export default function Results({ selection }) {
           setInputQ(response.data.input)
           setSentiData(response.data.senti)
           setSarcData(response.data.sarc)
-          // setTweets(response.data.tweets)
         }
       }
     })
@@ -85,35 +82,6 @@ export default function Results({ selection }) {
     )
   }
 
-  // const words = [
-  //   {
-  //     text: 'told',
-  //     value: 64,
-  //   },
-  //   {
-  //     text: 'mistake',
-  //     value: 11,
-  //   },
-  //   {
-  //     text: 'thought',
-  //     value: 16,
-  //   },
-  //   {
-  //     text: 'bad',
-  //     value: 17,
-  //   },
-  // ]
-
-  // const SimpleWordcloud = (words) => {
-  //   return (
-  //     <ReactWordcloud
-  //       words={words}
-  //       size={[500, 500]}
-  //     />
-  //   )
-  // }
-
-
   useEffect(() => {
     getAxiosData()
   }, [])
@@ -128,7 +96,7 @@ export default function Results({ selection }) {
           {sel[0] ? <div className='graphs'><p>Sentiment Analysis Barchart</p>{createBar(sentiData2)}</div> : null} <br />
           {sel[1] ? <div className='graphs'><p>Sentiment Analysis Piechart</p>{createPie(sentiData2)}</div> : null} <br />
           {sel[2] ? <div className='graphs'><p>Sarcasm Detection Piechart</p>{createBar(sarcData2)}</div> : null} <br />
-          {sel[3] ? <div className='graphs'><p>Results Table</p>{<Table />}</div> : null} <br/>
+          {sel[3] ? <div className='graphs'><p>Results Table</p>{<Table />}</div> : null} <br />
         </div>
       </div>
     </>

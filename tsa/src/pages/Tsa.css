@@ -24,7 +24,6 @@
     padding: 10px;
     border-radius: 15px;
     width: 450px;
-    /* max-width: auto; */
     font-size: 14px;
 }
 
@@ -43,7 +42,6 @@
 .search-bar button:hover {
     background: #e9e9e9;
 }
-
 
 /* customise report menu */
 .customise-menu p {
@@ -66,9 +64,8 @@
     background-color: gray;
 }
 
-
 .menu-btns {
-    margin: 1rem
+    margin: 1rem;
 }
 
 .menu-btns button {
@@ -100,7 +97,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     #btn-save {
         width: 5rem;
     }

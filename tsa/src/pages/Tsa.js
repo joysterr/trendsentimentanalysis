@@ -7,10 +7,6 @@ import Results from '../components/Results'
 export default function Tsa() {
   const [showReport, setShowReport] = useState(false)
   const [selection, setSelection] = useState()
-  // const [responseData, setResponse] = useState({})
-
-
-
 
   const handleSubmit = (e) => {
     // e.preventDefault()
@@ -30,11 +26,6 @@ export default function Tsa() {
         document.getElementById('searchForm').reset();
       })
   }
-
-
-
-
-
 
   function customiseReport() {
     console.log('customise button clicked!')
@@ -75,7 +66,6 @@ export default function Tsa() {
         </form>
       </div>
 
-      {/* reports need to be customisd */}
       <div className='customise-menu'>
         <p>Customise your report:</p>
         <div className='menu-btns'>

@@ -3,28 +3,20 @@
     color: gray;
 }
 
-/* .graphs-container img {
-    margin: 1rem;
-    background: no-repeat;
-    background-size: contain;
-    height: 100%;
-} */
-
-
 .graphs-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.graphs p{
+.graphs p {
     color: black;
     margin: 1rem;
     font-style: oblique;
 }
 
 @media only screen and (max-width: 600px) {
-    .graphs{
+    .graphs {
         scale: 0.7;
     }
     .graphs p {

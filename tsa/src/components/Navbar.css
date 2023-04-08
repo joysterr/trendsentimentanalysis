@@ -15,7 +15,7 @@ body {
     align-items: center;
     gap: 2rem;
     padding: 0 0.3rem;
-    position: sticky; /* #sticky */
+    position: sticky;
     top: 0;
     z-index: 1;
 }
