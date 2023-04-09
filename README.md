@@ -52,8 +52,9 @@ cd tsa
 npm start
 ```
 
->(IMP: its essential that you activate the virtual environment before launching the server.)
->(IMP: ensure all python packages are installed correctly or manually install them. The requirements.txt shows required packages)
+>IMP: its essential that you activate the virtual environment before launching the server. </br>
+>IMP: ensure all python packages are installed correctly or manually install them. The requirements.txt shows required packages</br>
+Number of tweets fetched by twitter api can be changed in twitter_api.py by changing the count parameter in search_tweets() function
 ---
 
 # To view and test jupyter notebooks/ipynb files
@@ -63,7 +64,7 @@ at the beginning of each file there are further instructions on how to run the f
 
 ## Datasets
 Please click on [this link](https://drive.google.com/drive/folders/19AwC_aP13RTJBK7Xx2J0-Q50W14Nmam8?usp=share_link) to view the datasets used/required to train/test the models. </br>
-Citrations can be found within each ipynb file. 
+Citrations can be found within and in each ipynb file. 
 
 # Future Plans:
  - Search filters to be able to fine-tune tweets gathered i.e based on location, etc.
