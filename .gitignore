@@ -162,5 +162,3 @@ cython_debug/
 # tsa specific
 server/__pycache__
 server/venv
-server/models
-server/temp/output.json
