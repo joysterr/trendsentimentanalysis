@@ -4,6 +4,7 @@ from flask import request, make_response
 import pandas as pd
 import json
 import pymongo
+import certifi
 from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from bson import json_util
@@ -12,12 +13,11 @@ import twitter_api as tapi
 import pre_processing as pre
 import tokenizer as tknz
 import tsa_brain as brain
-import graph_gen as ggen
 
 app = Flask(__name__)
 
 # mongodb connection
-client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'))
+client = MongoClient("mongodb+srv://201847:Brunel@clustertsa.rscxwmj.mongodb.net/?retryWrites=true&w=majority", server_api=ServerApi('1'), tlsCAFile=certifi.where())
 db = client.tsa_db
 
 # collections

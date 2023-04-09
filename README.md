@@ -16,14 +16,17 @@
 # [Prerequisites] Note to devs/mods/tutors/assessors:
 ## To test out app on your local machines you will have to do the following
 ## Requirements
-The recommended Python version is 3.10 at system level (TensorFlow does not work with newer versions of Python).
-This project also requires JavaScript and React. Please ensure these are installed and updated to the latest versions.
-Also the latest version of 'npm' for front-end and 'pip' for the backend is essential. 
+(The web app was developed with Python 3.10)
+(the web app works on macOS without any issues upon following below steps)
+The recommended Python version is >=3.10 at system level. 
+This project requires Node.js, JavaScript and React. Please ensure these are installed and updated to the latest versions.
+Also, the latest version of 'npm' for front-end and 'pip' for the backend is required. 
+(use pip3 if pip doesn't work)
 
 ## Back-end
 ```
 cd server
-python3 -m venv /venv
+python3 -m venv ./venv
 source venv/bin/activate
 pip install -r requirements.txt
 ```
@@ -50,7 +53,7 @@ npm start
 ```
 
 >(IMP: its essential that you activate the virtual environment before launching the server.)
-
+>(IMP: ensure all python packages are installed correctly or manually install them. The requirements.txt shows required packages)
 ---
 
 # To view and test jupyter notebooks/ipynb files
