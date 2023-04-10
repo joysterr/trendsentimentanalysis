@@ -1,0 +1,5 @@
+Please read the README.md file in this repository for details about this project and further instructions. 
+
+Link to the GitHub repo: https://github.com/joysterr/trendsentimentanalysis/
+
+Created by: Joyster Rodrigues | 2018487
