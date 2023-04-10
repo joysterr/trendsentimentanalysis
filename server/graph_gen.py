@@ -1,3 +1,6 @@
+# this module is used for testing only.
+# actual graphs are generated in the front-end.
+
 import numpy as np
 import pandas as pd
 import matplotlib

@@ -83,3 +83,32 @@ Citrations can be found within and in each ipynb file.
  from Reddit, Google Reviews, TrustPilot, etc.
  - Chatbot to attend customser services queries
  - Poetry generator (experimental)
+
+ # Troubleshooting
+ At the time of publishing/submitting this code, no issues were encountered. The code was tested on different macOS versions to ensure compatibility. 
+ ## Python dependencies
+ If dependency related issue occurs, please try:
+ ```
+ pip install -r requirements_ver
+ ```
+ -or-
+manually resolve dependenciy issues by referring to the requirements_all.txt which contains a snapshot of all module/libraries versions
+
+## Issue launching front-end by npm run
+Try running front-end on a different port, e.g. http://localhost:3001
+
+## Proxy issues when connecting to backend
+change the following in tsa/package.json from
+```
+"proxy": "http://localhost:5000",
+```
+to
+```
+"proxy": "http://<Your_Local_IP_address>:5000",
+```
+
+## Other Issues with Python Flask backend
+- Upgrade version of pip to the latest before installing dependencies
+- Please ensure that you are installing the dependencies within the venv as specfied above. 
+- Dependencies that do not install directly with the requirements promopt could be installed manually. 
+- The Python version should be >= 3.10 within the venv and running on the main system. 
