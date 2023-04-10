@@ -13,15 +13,17 @@
 
 ---
 
-# [Prerequisites] Note to devs/mods/tutors/assessors:
-## To test out app on your local machines you will have to do the following
+# Prerequisites 
+Note to devs/mods/tutors/assessors: </br>
+To test out app on your local machines you will have to do the following </br>
 ## Requirements
-(The web app was developed with Python 3.10)
+- The recommended Python version is >=3.10 at system level. 
+- This project requires Node.js, JavaScript and React. Please ensure these are installed and updated to the latest versions.
+- Also, the latest version of 'npm' for front-end and 'pip' for the backend is required. 
+
+(use pip3 if pip doesn't work) </br>
+(The web app was developed with Python 3.10) </br>
 (the web app works on macOS without any issues upon following below steps)
-The recommended Python version is >=3.10 at system level. 
-This project requires Node.js, JavaScript and React. Please ensure these are installed and updated to the latest versions.
-Also, the latest version of 'npm' for front-end and 'pip' for the backend is required. 
-(use pip3 if pip doesn't work)
 
 ## Back-end
 ```
@@ -40,13 +42,13 @@ npm install
 ---
 
 # To launch tsa
-After completing the prerequisites, the following steps must be followed in order:
+After completing the prerequisites, the following steps must be followed in order (skip 2nd line if activated venv):
 ```
 cd server
 source venv/bin/activate
 python3 server_mongo.py
 ```
-(open a new terminal in parent folder again)
+(open a new terminal in parent/root folder again)
 ```
 cd tsa
 npm start
@@ -54,7 +56,7 @@ npm start
 
 >IMP: its essential that you activate the virtual environment before launching the server. </br>
 >IMP: ensure all python packages are installed correctly or manually install them. The requirements.txt shows required packages</br>
-Number of tweets fetched by twitter api can be changed in twitter_api.py by changing the count parameter in search_tweets() function
+
 ---
 
 # To view and test jupyter notebooks/ipynb files
@@ -66,32 +68,21 @@ at the beginning of each file there are further instructions on how to run the f
 Please click on [this link](https://drive.google.com/drive/folders/19AwC_aP13RTJBK7Xx2J0-Q50W14Nmam8?usp=share_link) to view the datasets used/required to train/test the models. </br>
 Citrations can be found within and in each ipynb file. 
 
-# Future Plans:
- - Search filters to be able to fine-tune tweets gathered i.e based on location, etc.
- - Summary of what the searched trend is all about.
- - Sentiment Analysis of Tweets (i.e: latest 100 tweets)
-    - how the audience feel about the topic i.e. what emotions are invoked 
-    - how well the topic is doing i.e.,is it evoking positive/neutral/negative responses
- - Customisable graphs display valuable information
-    - Categories of mood
-    - Percentage of emotions being displayed
-    - How well the trend is doing over time
-    - Summary of most common criticising words
- - Exploring potential sub-categories of mood or overlapping moods i.e., anger &
- sadness
- - Potential to grow in the future: accessing other data sources over time, i.e., data
- from Reddit, Google Reviews, TrustPilot, etc.
- - Chatbot to attend customser services queries
- - Poetry generator (experimental)
+---
+# Twitter API
+- Number of tweets fetched by twitter api can be changed in twitter_api.py by changing the count parameter in search_tweets() function
+- Max 100 Tweets per GET req
+- Total fetched amount should not go over 100,000/month as there is a limit
 
- # Troubleshooting
- At the time of publishing/submitting this code, no issues were encountered. The code was tested on different macOS versions to ensure compatibility. 
- ## Python dependencies
- If dependency related issue occurs, please try:
- ```
- pip install -r requirements_ver
- ```
- -or-
+---
+# Troubleshooting
+At the time of publishing/submitting this code, no issues were encountered. The code was tested on different macOS versions to ensure compatibility. 
+## Python dependencies
+If dependency related issue occurs, please try:
+```
+pip install -r requirements_ver
+```
+-or-
 manually resolve dependenciy issues by referring to the requirements_all.txt which contains a snapshot of all module/libraries versions
 
 ## Issue launching front-end by npm run
@@ -112,3 +103,21 @@ to
 - Please ensure that you are installing the dependencies within the venv as specfied above. 
 - Dependencies that do not install directly with the requirements promopt could be installed manually. 
 - The Python version should be >= 3.10 within the venv and running on the main system. 
+
+# Future Plans:
+ - Search filters to be able to fine-tune tweets gathered i.e based on location, etc.
+ - Summary of what the searched trend is all about.
+ - Sentiment Analysis of Tweets (i.e: latest 100 tweets)
+    - how the audience feel about the topic i.e. what emotions are invoked 
+    - how well the topic is doing i.e.,is it evoking positive/neutral/negative responses
+ - Customisable graphs display valuable information
+    - Categories of mood
+    - Percentage of emotions being displayed
+    - How well the trend is doing over time
+    - Summary of most common criticising words
+ - Exploring potential sub-categories of mood or overlapping moods i.e., anger &
+ sadness
+ - Potential to grow in the future: accessing other data sources over time, i.e., data
+ from Reddit, Google Reviews, TrustPilot, etc.
+ - Chatbot to attend customser services queries
+ - Poetry generator (experimental)
