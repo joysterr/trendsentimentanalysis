@@ -1,7 +1,13 @@
 # Trend Sentiment Analysis
- While it is easy to send out surveys and expect the audience to give reviews of products/services or any trending topic, the chances of getting sufficient responses can be difficult. On the other hand, it is easy and convenient to post views on social media platforms i.e., Twitter, Reddit, etc. 
+While it is easy to send out surveys and expect the audience to give reviews of products/services or any trending topic, the chances of getting sufficient responses can be difficult. On the other hand, it is easy and convenient to post views on social media platforms i.e., Twitter, Reddit, etc. 
 
- Trend Sentiment Analysis is a powerful analytics tool with the potential to delivery summary of the trending topic with in-depth sentiment analysis performed on latest data gathered from a social media platform such as Twitter. A business could easily get insights on how well a product/service is being received on the consumer end with a report that can be easily modified to tailor for relevant use.
+## IMP Notice:
+- This project is no longer supported due to discontinuations and changes to policies surrounding Twitter and Legacy Twitter APIs.
+- A frontend re-design was implemented last year and can be view here: [Live Demo](https://joysterr.github.io/tsa-reimagined/) && [GitHub Repo](https://github.com/joysterr/tsa-reimagined)
+
+
+## Overview:
+Trend Sentiment Analysis is a powerful analytics tool with the potential to delivery summary of the trending topic with in-depth sentiment analysis performed on latest data gathered from a social media platform such as Twitter. A business could easily get insights on how well a product/service is being received on the consumer end with a report that can be easily modified to tailor for relevant use.
 
 ## Objectives:
 1) To develop a dynamic software solution that is functional, intuitive and minimalistic in design. 
