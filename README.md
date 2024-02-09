@@ -3,7 +3,8 @@ While it is easy to send out surveys and expect the audience to give reviews of 
 
 ## IMP Notice:
 - This project is no longer supported due to discontinuations and changes to policies surrounding Twitter and Legacy Twitter APIs.
-- A frontend re-design was implemented last year and can be view here: [Live Demo](https://joysterr.github.io/tsa-reimagined/) && [GitHub Repo](https://github.com/joysterr/tsa-reimagined)
+- Other than the Twitter API capabilities, the rest of the application should be functional.
+- A frontend re-design was implemented last year and can be viewed here: [Live Demo](https://joysterr.github.io/tsa-reimagined/) && [GitHub Repo](https://github.com/joysterr/tsa-reimagined)
 
 
 ## Overview:
